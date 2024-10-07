@@ -1,4 +1,4 @@
-const str = "ezegyeléghosszústring"
+const str = "ezegyeLégHOsszústring"
 
 const elso_ot = str.slice(0, 5);
 
@@ -8,7 +8,7 @@ const harom_nyolc = str.slice(2, 8);
 
 console.log("A 3-8 karakter:", harom_nyolc);
 
-const ot_vegeig = str.slice(4, str.length);
+const ot_vegeig = str.slice(4);
 
 console.log("A 5.tol a vegeig:", ot_vegeig);
 
@@ -20,9 +20,19 @@ const nagybetus = str.toUpperCase();
 
 console.log("Nagybetűvel:", nagybetus);
 
-let minden_masodik_nagybetu = "";
-
-str.split("").filter((str, index)=> index % 2 == 0 ? minden_masodik_nagybetu += str : minden_masodik_nagybetu += str.toUpperCase());
+let minden_masodik_nagybetu = "".concat(
+    str.split("").map(
+        (char, index)=> {
+            let str = "";
+            if(index %2 == 0){
+                str += char.toUpperCase();
+            } else {
+                str += char.toLowerCase();
+            }
+            return str;
+        }
+    )
+).replaceAll(",","")
 
 console.log("Minden 2. nagybetu", minden_masodik_nagybetu)
 
