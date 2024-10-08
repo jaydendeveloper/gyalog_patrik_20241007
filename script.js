@@ -1,4 +1,4 @@
-const str = "ezegyeLégHOsszústring"
+const str = "ezegyeLégHOsszústring";
 
 const elso_ot = str.slice(0, 5);
 
@@ -32,13 +32,13 @@ let minden_masodik_nagybetu = "".concat(
             return str;
         }
     )
-).replaceAll(",","")
+).replaceAll(",","");
 
-console.log("Minden 2. nagybetu", minden_masodik_nagybetu)
+console.log("Minden 2. nagybetu", minden_masodik_nagybetu);
 
 const minden_e_nagybetu = str.replaceAll("e", "E");
 
-console.log("Minden e nagybetu", minden_e_nagybetu)
+console.log("Minden e nagybetu", minden_e_nagybetu);
 
 const e_betunel_elvalasztva = str.split("e");
 
